@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 #Exposing port 5000 from the container
 EXPOSE 5000
 #Starting the Python application
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["py", "app.py"]
