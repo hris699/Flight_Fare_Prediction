@@ -19,7 +19,7 @@ spec:
         image: 094853031708.dkr.ecr.us-east-1.amazonaws.com/python-demo:latest
         ports:
         - containerPort: 5000
------------
+
 
 apiVersion: v1
 kind: Service
