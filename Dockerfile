@@ -18,4 +18,4 @@ EXPOSE 5000
 
 
 
-CMD ["gunicorn","--config", "gunicorn_config.py", "app:app"]
+CMD ["gunicorn","--config", "config.py", "app:app"]
