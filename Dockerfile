@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 #Exposing port 5000 from the container
 EXPOSE 5000
 #Starting the Python application
-CMD ["py", "app.py"]
+CMD ["python3", "app.py"]
