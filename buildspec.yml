@@ -22,7 +22,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO:$IMAGE_TAG
+      - docker push public.ecr.aws/w6b5n9p7/$IMAGE_REPO:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"fare-predict","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
