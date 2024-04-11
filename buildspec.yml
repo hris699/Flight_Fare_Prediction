@@ -17,7 +17,7 @@ phases:
       - echo Building the Docker image...
       - pip install --upgrade pip
       - docker build -t $IMAGE_REPO:latest .
-      - docker tag $IMAGE_REPO:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO:$IMAGE_TAG
+      - docker tag $IMAGE_REPO:latest public.ecr.aws/w6b5n9p7/$IMAGE_REPO:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
