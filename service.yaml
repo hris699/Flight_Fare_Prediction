@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: fare-predict
+  type: NodePort
   ports:
     - protocol: TCP
       port: 5000
