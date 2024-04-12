@@ -10,7 +10,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - docker --version
-      - aws ecr-public get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - aws ecr-public get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin public.ecr.aws/w6b5n9p7
   build:
     commands:
       - echo Build started on `date`
@@ -24,7 +24,7 @@ phases:
       - echo Pushing the Docker images...
       - docker push public.ecr.aws/w6b5n9p7/$IMAGE_REPO:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"fare-predict","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"fare-predict","imageUri":"%s"}]' public.ecr.aws/w6b5n9p7/$IMAGE_REPO:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
   files:
