@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-deployment
+  name: fare-predict-deployment
   labels:
     app: fare-predict
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: fare-predict
-        image: 094853031708.dkr.ecr.us-east-1.amazonaws.com/python-demo:latest
+        image: public.ecr.aws/w6b5n9p7/python-demo:latest
         ports:
         - containerPort: 5000
 
